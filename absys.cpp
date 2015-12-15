@@ -45,7 +45,6 @@ void calculateMachula( char equation[], int& a, int& b, int& c ) {
         }
         i++;
     }
-    // printf( "%d %d %d\n", a, b, c );
     if( machulaFlag == 1 ) {
         a = c - b;
     } else if( machulaFlag == 2 ) {
@@ -63,7 +62,6 @@ int main() {
         int a = 0, b = 0, c = 0;
         // equation is of the form a + b = c
         scanf( "\n%[^\n]", equation );
-        // printf( "%d %s\n", t, equation );
         calculateMachula( equation, a, b, c );
         printf( "%d + %d = %d\n", a, b, c );
     }
