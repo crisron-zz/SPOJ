@@ -1,5 +1,4 @@
 #include <cstdio>
-#include <cstring>
 
 void calculateMachula( char equation[], int& a, int& b, int& c ) {
     // machulaFlag = 1 -> a has machula
