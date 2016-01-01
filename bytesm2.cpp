@@ -11,12 +11,14 @@ int calMax( int dp[][ MAX + 2], int grid[][ MAX + 2 ], int col, int i, int j ) {
         return dp[ i ][ j ];
     }
     int left = 0, up = 0, right = 0;
+    // Check if we can go one row up
     if( i ) {
         if( dp[ i - 1 ][ j ] != -1 ) {
             up = dp[ i - 1 ][ j ];
         } else {
             up = calMax( dp, grid, col, i - 1, j );
         }
+        // Check if we can go one column left
         if( j ) {
             if( dp[ i - 1 ][ j - 1 ] != -1 ) {
                 left = dp[ i - 1 ][ j - 1 ];
@@ -24,6 +26,7 @@ int calMax( int dp[][ MAX + 2], int grid[][ MAX + 2 ], int col, int i, int j ) {
                 left = calMax( dp, grid, col, i - 1, j - 1 );
             }
         }
+        // Check if we can go one column right
         if( j < ( col - 1 ) ) {
             if( dp[ i - 1 ][ j + 1 ] != -1 ) {
                 right = dp[ i - 1 ][ j + 1 ];
@@ -32,7 +35,7 @@ int calMax( int dp[][ MAX + 2], int grid[][ MAX + 2 ], int col, int i, int j ) {
             }
         }
     }
-    dp[ i ][ j ] = grid[ i ][ j ] + max( left, max( up, right ) );
+    dp[ i ][ j ] = grid[ i ][ j ] + max( left, max( up, right ) ); // max() is defined in algorithm
     return dp[ i ][ j ];
 }
 
