@@ -23,6 +23,7 @@ void printAnswer( int n ) {
     // oneBitPositions[ i ] = 1 if i-th bit of n from LSB is 1
     bool oneBitPositions[ BITS ] = { 0 };
     int oneBitsRemaining = 0;
+    // XXX: Maybe cache the results so as to not compute over and over again
     findOneBitPositions( n, oneBitPositions, oneBitsRemaining );
 
     // Consider higher powers first
@@ -38,6 +39,7 @@ void printAnswer( int n ) {
             } else { // i == 0
                 cout << "2(0)";
             }
+            // There are more terms to come
             if( oneBitsRemaining ) {
                 cout << "+";
             }
