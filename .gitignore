@@ -6,3 +6,6 @@
 
 # Ignore swap files
 .*.swp
+
+# Ignore bin directory
+bin/
