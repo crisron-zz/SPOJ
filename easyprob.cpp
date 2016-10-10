@@ -29,7 +29,6 @@ void printAnswer( int n ) {
     for( int i = BITS - 1; i >= 0; --i ) {
         if( oneBitPositions[ i ] ) {
             oneBitsRemaining--;
-            bool printClosingParen = true;
             if( i > 1 ) {
                 cout << "2(";
                 printAnswer( i );
