@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 #include <climits>
+#include <cstdio>
 
 #define MAX 50002
 #define SEGTREEMAX 200000 
@@ -105,18 +106,18 @@ int query( const segTreeNode segmentTree[], const int& start,
 
 int main() {
     int n, m, start, end, arr[ MAX ];
-    cin >> n;
+    scanf( "%d", &n );
     for( int i = 0; i < n; ++i ) {
-        cin >> arr[ i ];
+        scanf( "%d", &arr[ i ] );
     }
     segTreeNode segmentTree[ SEGTREEMAX ];
     buildSegmentTree( segmentTree, arr, n );
 
-    cin >> m;
+    scanf( "%d", &m );
     for( int i = 0; i < m; ++i ) {
-        cin >> start >> end;
+        scanf( "%d%d", &start, &end );
         start--; end--;
-        cout << query( segmentTree, start, end, n ) << endl;
+        printf( "%d\n", query( segmentTree, start, end, n ) );
     }
     return 0;
 }
